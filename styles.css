@@ -273,3 +273,97 @@ body.light-mode .site-footer {
   background: #f5f5f5;
   color: #444;
 }
+
+/* === PLAYER PAGE STYLES === */
+
+/* Container */
+.player-page {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Anime Title */
+.player-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #d63384;
+  text-align: center;
+}
+
+body.light-mode .player-title {
+  color: #b02a6f;
+}
+
+/* Episode Selector */
+.episode-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.episode-btn {
+  background: #1a1a22;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.episode-btn:hover {
+  background: #d63384;
+  transform: translateY(-2px);
+}
+
+.episode-btn.active {
+  background: #d63384;
+  color: #fff;
+}
+
+/* Light Mode Episode Buttons */
+body.light-mode .episode-btn {
+  background: #f1f1f1;
+  color: #222;
+}
+
+body.light-mode .episode-btn:hover {
+  background: #ff4da6;
+  color: #fff;
+}
+
+body.light-mode .episode-btn.active {
+  background: #ff4da6;
+  color: #fff;
+}
+
+/* Video Player */
+.player-container {
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  background: #000;
+}
+
+.player-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Light Mode Player */
+body.light-mode .player-container {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  background: #111;
+}
+
