@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toradora! | BlossomFlix</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="player.css">
+</head>
+<body>
+  <!-- Stylish Header -->
+  <header class="header-banner">
+    <div class="header-content">
+      <a href="index.html" class="back-btn">← Back To Home</a>
+      <h1 class="player-title">Toradora!</h1>
+    </div>
+  </header>
+
+  <!-- Player Page Content -->
+  <main class="player-page">
+    <!-- Video Player -->
+    <div class="player-container">
+      <iframe id="animePlayer" src="https://vidsrc.icu/embed/tv/tt11563966/1/1" allowfullscreen scrolling="no"></iframe>
+    </div>
+
+    <!-- Season Selector -->
+    <div class="season-selector">
+      <label for="seasonSelect">Select Season:</label>
+      <select id="seasonSelect">
+        <option value="1" selected>Season 1</option>
+      </select>
+    </div>
+
+    <!-- Episode Buttons -->
+    <div class="episode-card">
+      <h2 class="episode-heading">Episodes</h2>
+      <div class="episode-selector" id="episodeSelector">
+        <!-- Episode buttons will be injected here by JS -->
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    // === Episode Data for Toradora ===
+    const episodes = {
+      1: 25 // Toradora Season 1 has 25 episodes
+      // If future seasons exist, add more entries
+    };
+
+    const seasonSelect = document.getElementById("seasonSelect");
+    const episodeSelector = document.getElementById("episodeSelector");
+    const player = document.getElementById("animePlayer");
+
+    // Function to load episodes for selected season
+    function loadEpisodes(season) {
+      episodeSelector.innerHTML = ""; // Clear old buttons
+      for (let i = 1; i <= episodes[season]; i++) {
+        const btn = document.createElement("button");
+        btn.classList.add("episode-btn");
+        if (i === 1) btn.classList.add("active"); // Default first ep active
+        btn.textContent = `Episode ${i}`;
+        btn.setAttribute("data-ep", `https://vidsrc.icu/embed/tv/tt11563966/${season}/${i}`);
+        
+        btn.addEventListener("click", () => {
+          player.src = btn.getAttribute("data-ep");
+          document.querySelectorAll(".episode-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+
+        episodeSelector.appendChild(btn);
+      }
+      // Load first episode automatically
+      player.src = `https://vidsrc.icu/embed/tv/tt11563966/${season}/1`;
+    }
+
+    // On season change
+    seasonSelect.addEventListener("change", () => {
+      loadEpisodes(seasonSelect.value);
+    });
+
+    // Load default season (1) on page load
+    loadEpisodes(1);
+  </script>
+</body>
+</html>
