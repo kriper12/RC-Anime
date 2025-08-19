@@ -366,4 +366,124 @@ body.light-mode .player-container {
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   background: #111;
 }
+/* === HEADER STYLING === */
+.header-banner {
+  width: 100%;
+  background: linear-gradient(135deg, #d63384, #4a148c);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.back-btn {
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.back-btn:hover {
+  opacity: 0.8;
+}
+
+/* === PLAYER PAGE === */
+.player-page {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Player */
+.player-container {
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  margin-bottom: 2rem;
+}
+
+.player-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* === EPISODE CARD === */
+.episode-card {
+  background: #1a1a22;
+  padding: 1.5rem;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 1100px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+body.light-mode .episode-card {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.episode-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #d63384;
+}
+
+body.light-mode .episode-heading {
+  color: #b02a6f;
+}
+
+/* Episode Buttons */
+.episode-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.episode-btn {
+  background: linear-gradient(135deg, #d63384, #4a148c);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s, opacity 0.3s;
+}
+
+.episode-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(214,51,132,0.5);
+  opacity: 0.95;
+}
+
+.episode-btn.active {
+  background: linear-gradient(135deg, #ff4da6, #6a1b9a);
+  box-shadow: 0 4px 14px rgba(255,77,166,0.6);
+}
+
+/* Light Mode Buttons */
+body.light-mode .episode-btn {
+  background: linear-gradient(135deg, #ff7ab8, #c77dff);
+  color: #fff;
+}
+
+body.light-mode .episode-btn.active {
+  background: linear-gradient(135deg, #ff4da6, #a44afc);
+}
 
