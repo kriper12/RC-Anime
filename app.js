@@ -4,13 +4,12 @@ const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
 
 const animeData = [
   {
-    id: 'kaguya',
-    title: 'Kaguya‑sama: Love Is War',
-    year: 2019,
-    rating: 9.0,
-    genres: ['Rom‑Com','School'],
-    poster: 'https://m.media-amazon.com/images/M/MV5BMTM1ZWViNWMtZWY2ZC00YmYyLTk1ZGEtMzRjOWI2YTM1OTI3XkEyXkFqcGc@._V1_FMjpg_UY2560_.jpg',
-    desc: 'Two geniuses wage a hilarious battle to make the other confess first.'
+    id: "kaguya",
+    title: "Kaguya-sama: Love Is War",
+    genre: ["Rom-Com", "School"],
+    image: "https://i.imgur.com/xjR9QqN.jpg",
+    desc: "A hilarious war of love and wits.",
+    link: "Kaguya‑sama-Love-Is-War"   // 👈 NEW!
   },
   {
     id: 'horimiya',
@@ -292,4 +291,25 @@ setThemeIcon();
 document.addEventListener('DOMContentLoaded', ()=>{
   wireUI();
   render();
+
+  function createAnimeCard(anime) {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <a href="${anime.link}" class="thumb-link">
+      <div class="thumb" style="--bg:url('${anime.image}')"></div>
+    </a>
+    <div class="card-body">
+      <h3 class="title"><a href="${anime.link}">${anime.title}</a></h3>
+      <p class="meta">${anime.genre.join(", ")}</p>
+      <div class="card-actions">
+        <a href="${anime.link}" class="pill play-btn">▶ Play</a>
+        <button class="pill fav-btn" data-id="${anime.id}">♡ Fav</button>
+      </div>
+    </div>
+  `;
+
+  return card;
+}
 });
