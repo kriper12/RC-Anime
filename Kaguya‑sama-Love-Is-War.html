@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaguya-sama: Love Is War • BlossomFlix</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-name">BlossomFlix</span>
+    </div>
+    <nav class="user-actions">
+      <a href="index.html" class="pill">← Back To Home</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section>
+      <h1 class="section-title">Kaguya-sama: Love Is War</h1>
+      <p style="color:var(--muted);max-width:700px;">
+        Two geniuses wage a hilarious battle to make the other confess first.  
+        Select an episode below to start watching!
+      </p>
+    </section>
+
+    <!-- Player -->
+    <section class="player-shell" style="margin-top:1.5rem;">
+      <div class="player">
+        <iframe id="kaguyaPlayer" src="https://www.youtube.com/embed/PHJYjQ5-9aQ"
+          title="Kaguya-sama Player" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Episode Buttons -->
+    <section style="margin-top:1.5rem;">
+      <h2 class="section-title">Episodes</h2>
+      <div class="pill-group" id="episodeButtons">
+        <button class="pill" data-ep="1" data-src="https://www.youtube.com/embed/PHJYjQ5-9aQ">Episode 1</button>
+        <button class="pill" data-ep="2" data-src="https://www.youtube.com/embed/dy90tA3TT1c">Episode 2</button>
+        <button class="pill" data-ep="3" data-src="https://www.youtube.com/embed/7w8MPUQWROE">Episode 3</button>
+        <button class="pill" data-ep="4" data-src="https://www.youtube.com/embed/BvpGJ5h9vUQ">Episode 4</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> BlossomFlix — Fan Page For Romance & Comedy Anime.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const player = document.getElementById("kaguyaPlayer");
+    const buttons = document.querySelectorAll("#episodeButtons button");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        // update iframe src
+        player.src = btn.dataset.src;
+        // highlight active button
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
