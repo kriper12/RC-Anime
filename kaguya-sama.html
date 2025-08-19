@@ -8,27 +8,31 @@
   <link rel="stylesheet" href="player.css">
 </head>
 <body>
-  <!-- Header / Back -->
-  <header class="header">
-    <a href="index.html" class="back-btn">← Back To Home</a>
-    <button id="themeToggle" class="theme-toggle">🌙</button>
+  <!-- Stylish Header -->
+  <header class="header-banner">
+    <div class="header-content">
+      <a href="index.html" class="back-btn">← Back To Home</a>
+      <h1 class="player-title">Kaguya-sama: Love Is War</h1>
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+    </div>
   </header>
 
   <!-- Player Page Content -->
   <main class="player-page">
-    <h1 class="player-title">Kaguya-sama: Love Is War</h1>
-
-    <!-- Episode Buttons -->
-    <div class="episode-selector">
-      <button class="episode-btn active" data-ep="https://www.youtube.com/embed/HbH2c6NqxaQ">Episode 1</button>
-      <button class="episode-btn" data-ep="https://www.youtube.com/embed/2S4jlVqg8j8">Episode 2</button>
-      <button class="episode-btn" data-ep="https://www.youtube.com/embed/Jv4s_RsOq1U">Episode 3</button>
-      <button class="episode-btn" data-ep="https://www.youtube.com/embed/jL5rN49r6gw">Episode 4</button>
-    </div>
-
     <!-- Video Player -->
     <div class="player-container">
       <iframe id="animePlayer" src="https://www.youtube.com/embed/HbH2c6NqxaQ" allowfullscreen></iframe>
+    </div>
+
+    <!-- Episode Buttons -->
+    <div class="episode-card">
+      <h2 class="episode-heading">Episodes</h2>
+      <div class="episode-selector">
+        <button class="episode-btn active" data-ep="https://www.youtube.com/embed/HbH2c6NqxaQ">Episode 1</button>
+        <button class="episode-btn" data-ep="https://www.youtube.com/embed/2S4jlVqg8j8">Episode 2</button>
+        <button class="episode-btn" data-ep="https://www.youtube.com/embed/Jv4s_RsOq1U">Episode 3</button>
+        <button class="episode-btn" data-ep="https://www.youtube.com/embed/jL5rN49r6gw">Episode 4</button>
+      </div>
     </div>
   </main>
 
