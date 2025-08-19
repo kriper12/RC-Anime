@@ -9,8 +9,7 @@ const animeData = [
     year: 2019,
     rating: 9.0,
     genres: ['Rom‑Com','School'],
-    poster: 'https://image.tmdb.org/t/p/w500/2lHLa87Z2J1YXhYzu3PV6PvJEaG.jpg',
-    trailer: 'https://www.youtube.com/embed/PHJYjQ5-9aQ',
+    poster: 'https://m.media-amazon.com/images/M/MV5BMTM1ZWViNWMtZWY2ZC00YmYyLTk1ZGEtMzRjOWI2YTM1OTI3XkEyXkFqcGc@._V1_FMjpg_UY2560_.jpg',
     desc: 'Two geniuses wage a hilarious battle to make the other confess first.'
   },
   {
