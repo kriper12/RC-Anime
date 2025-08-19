@@ -20,7 +20,7 @@
   <main class="player-page">
     <!-- Video Player -->
     <div class="player-container">
-      <iframe id="animePlayer" src="https://vidsrc.icu/embed/tv/tt11563966/1/1" allowfullscreen scrolling="no"></iframe>
+      <iframe id="animePlayer" src="https://vidsrc.icu/embed/tv/tt1279024/1/1" allowfullscreen scrolling="no"></iframe>
     </div>
 
     <!-- Season Selector -->
@@ -60,7 +60,7 @@
         btn.classList.add("episode-btn");
         if (i === 1) btn.classList.add("active"); // Default first ep active
         btn.textContent = `Episode ${i}`;
-        btn.setAttribute("data-ep", `https://vidsrc.icu/embed/tv/tt11563966/${season}/${i}`);
+        btn.setAttribute("data-ep", `https://vidsrc.icu/embed/tv/tt1279024/${season}/${i}`);
         
         btn.addEventListener("click", () => {
           player.src = btn.getAttribute("data-ep");
@@ -71,7 +71,7 @@
         episodeSelector.appendChild(btn);
       }
       // Load first episode automatically
-      player.src = `https://vidsrc.icu/embed/tv/tt11563966/${season}/1`;
+      player.src = `https://vidsrc.icu/embed/tv/tt1279024/${season}/1`;
     }
 
     // On season change
