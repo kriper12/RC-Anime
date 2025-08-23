@@ -91,7 +91,11 @@ document.onkeydown = e => {
   if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74)) return false; 
   if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
 };
+const iframe = document.getElementById("animePlayer");
 
+iframe.addEventListener("focus", () => {
+  window.focus(); // Bring focus back to main page
+});
     setInterval(function() {
   if (window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160) {
     document.body.innerHTML = "<h1>DevTools Detected 👀</h1>";
