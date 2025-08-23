@@ -19,6 +19,8 @@
   <!-- Player Page Content -->
   <main class="player-page">
     <!-- Video Player -->
+    <div style="position:absolute; width:800px; height:450px; top:0; left:0; z-index:10;" 
+     onmousedown="window.focus();"></div>
     <div class="player-container">
       <iframe id="animePlayer" src="https://vidsrc.icu/embed/tv/tt9522300/1/1" allowfullscreen scrolling="no"></iframe>
     </div>
@@ -101,6 +103,14 @@ iframe.addEventListener("focus", () => {
     document.body.innerHTML = "<h1>DevTools Detected 👀</h1>";
   }
 }, 1000);
+function blockDevKeys(e) {
+  if (e.keyCode === 123) return false; // F12
+  if (e.ctrlKey && e.shiftKey && [73,74,67].includes(e.keyCode)) return false; // Ctrl+Shift+I/J/C
+  if (e.ctrlKey && e.keyCode === 85) return false; // Ctrl+U
+}
+
+window.addEventListener("keydown", blockDevKeys);
+window.addEventListener("keypress", blockDevKeys);
 
   </script>
 </body>
