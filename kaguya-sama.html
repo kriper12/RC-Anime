@@ -76,7 +76,7 @@
       // Load first episode automatically
       player.src = `https://vidsrc.icu/embed/tv/tt9522300/${season}/1`;
     }
-
+document.addEventListener("contextmenu", e => e.preventDefault());
     // On season change
     seasonSelect.addEventListener("change", () => {
       loadEpisodes(seasonSelect.value);
@@ -85,8 +85,5 @@
     // Load default season (1) on page load
     loadEpisodes(1);
   </script>
-<script>
-  document.addEventListener("contextmenu", e => e.preventDefault());
-</script>
 </body>
 </html>
